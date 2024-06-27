@@ -22,6 +22,7 @@ public class DataRepository {
 
 	// 사용자 ID로 이름 조회 (Read)
 	public String findUserNameById(Long id) {
+		// 쿼리를 실행할 때의 객체를 Object type으로 받고 리턴합니다.
 		return jdbcTemplate.queryForObject(
 			"SELECT name FROM users WHERE id = ?",
 			new Object[]{id},
